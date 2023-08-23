@@ -6,10 +6,12 @@ import pdfplumber
 from docx import Document
 import io
 
+import config
+
 app = Flask(__name__)
 
-openai.api_key = "INSERT_API_KEY_HERE"
-app.secret_key = "INSERT_APP_SECRET_KEY_HERE"
+openai.api_key = config.api_key
+app.secret_key = config.secret_key
 
 @app.route('/')
 def home():
